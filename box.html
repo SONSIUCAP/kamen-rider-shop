@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SHOP SHIBA IKKINU - Bảng Giá Mô Hình Kamen Rider (Kuuga -> Myth)</title>
+  
+  <style>
+    /* Reset CSS */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 40px 20px;
+    }
+
+    /* CSS DÀNH CHO VIDEO NỀN ĐỘNG */
+    .bg-video {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1; /* Đẩy video ra sau cùng làm nền */
+      object-fit: cover;
+      filter: brightness(0.5); /* Hạ độ sáng video cho dễ đọc chữ */
+    }
+
+    /* TRANG TRÍ TIÊU ĐỀ SHOP SHIBA IKKINU */
+    .shop-header {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .shop-title {
+      font-size: 2.8rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      
+      background: linear-gradient(45deg, #ff9800, #ff5722);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      
+      filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.6));
+      margin-bottom: 5px;
+    }
+
+    .shop-subtitle {
+      font-size: 1.1rem;
+      color: #ffffff;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+    }
+
+    /* KHUNG LƯỚI CHỨA 28 SẢN PHẨM */
+    .product-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 25px;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    /* THẺ SẢN PHẨM */
+    .product-card {
+      background-color: rgba(255, 255, 255, 0.95);
+      border: 2px solid #007bff;
+      border-radius: 12px;
+      padding: 18px;
+      text-align: center;
+      
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+
+      transition: all 0.3s ease-in-out;
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      border-color: #ff5722;
+      box-shadow: 0 12px 24px rgba(255, 87, 34, 0.4);
+      cursor: pointer;
+    }
+
+    /* Khung chứa hình ảnh */
+    .image-wrapper {
+      width: 100%;
+      height: 200px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .product-image {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    /* Tiêu đề & Nội dung */
+    .product-title {
+      font-size: 1.05rem;
+      color: #111;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    .product-description {
+      font-size: 0.85rem;
+      color: #555;
+      margin-bottom: 12px;
+      line-height: 1.4;
+      flex-grow: 1;
+    }
+
+    .product-price {
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #d32f2f;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .add-to-cart-btn {
+      background-color: #007bff;
+      color: #ffffff;
+      border: none;
+      padding: 10px 12px;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .product-card:hover .add-to-cart-btn {
+      background-color: #ff5722;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- VIDEO NỀN ĐỘNG -->
+  <video autoplay loop muted playsinline class="bg-video">
+    <source src="background-effect.mp4" type="video/mp4">
+  </video>
+
+  <!-- TIÊU ĐỀ SHOP SHIBA IKKINU -->
+  <div class="shop-header">
+    <h1 class="shop-title">🐕 SHOP SHIBA IKKINU 🐕</h1>
+    <p class="shop-subtitle">Không Chuyên Mô Hình Kamen Rider Chính Hãng (Kuuga -> Myth)</p>
+  </div>
+
+  <!-- BỘ BẢNG GIÁ 28 KAMEN RIDER -->
+  <div class="product-container">
+    
+    <!-- 1. Kuuga -->
+    <div class="product-card">
+      <div class="image-wrapper"><img src="kuuga.jpg" alt="Kuuga" class="product-image"></div>
+      <h3 class="product-title">S.H.Figuarts Kamen Rider Kuuga</h3>
+      <p class="product-description">Rider mở màn thời kỳ Heisei năm 2000 với sức mạnh cổ xưa.</p>
+      <span class="product-price">1.950.000 VNĐ</span>
+      <button class="add-to-cart-btn">Thêm vào giỏ hàng</button>
+    </div>
+
+    <!-- 2. Agito -->
+    <div class="product-card">
+      <div class="image-wrapper"><img src="agito.png" alt="Agito" class="product-image"></div>
+      <h3 class="product-title">S.H.Figuarts Kamen Rider Agito</h3>
+      <p class="product-description">Chiến binh tiến hóa mang sức mạnh của chúa trời.</p>
+      <span class="product-price">1.600.000 VNĐ</span>
+      <button class="add-to-cart-btn">Thêm vào giỏ hàng</button>
+    </div>
+
+    <!-- 3. Ryuki -->
+    <div class="product-card">
+      <div class="image-wrapper"><img src="ryuki.png" alt="Ryuki" class="product-image"></div>
+      <h3 class="product-title">S.H.Figuarts Kamen Rider Ryuki</h3>
+      <p class="product-description">Rider chiến đấu trong thế giới gương cùng Rồng Đỏ Dragredder.</p>
+      <span class="product-price">1.750.000 VNĐ</span>
+      <button class="add-to-cart-btn">Thêm vào giỏ hàng</button>
+    </div>
+
+    <!-- 4. Faiz -->
+    <div class="product-card">
+      <div class="image-wrapper"><img src="faiz.png" alt="Faiz" class="product-image"></div>
+      <h3 class="product-title">S.H.Figuarts Kamen Rider Faiz (555)</h3>
+      <p class="product-description">Công nghệ biến hình điện thoại nắp gập mang tính biểu tượng.</p>
+      <span class="product-price">1.850.000 VNĐ</span>
+      <button class="add-to-cart-btn">Thêm vào giỏ hàng</button>
+    </div>
+
+    <!-- 5. Blade -->
+    <div class="product-card">
+      <div class="image-wrapper"><img src="blade.png" alt="Blade" class="product-image"></div>
+      <h3 class="product-title">S.H.Figuarts Kamen Rider Blade</h3>
+      <p class="product-description">Chiến binh bài Bích phong cách Trump Card hấp dẫn.</p>
+      <span class="product-price">1.550.000 VNĐ</span>
+      <button class="add-to-cart-btn">Thêm vào giỏ hàng</button>
+    </div>
+
+    <!-- 6. Hibiki -->
+    <div class="product-card">
+      <div class="image-wrapper"><img src="hibiki.png" alt="Hibiki" class="product-image"></div>
+      <h3 class="product-title">S.H.Figuarts Kamen Rider Hibiki</h3>
+      <p class="product-description">Quỷ thần âm nhạc tiêu diệt Makamou bằng trống sóng âm.</p>
+      <span class="product-price">1.500.000 VNĐ</span>
+      <button class="add-to-cart-btn">Thêm vào giỏ hàng</button>
+    </div>
+
+    <!-- 7. Kabuto -->
+    <div class="product-card">
+      <div class="image-wrapper"><img src="kabuto.png" alt="Kabuto" class="product-image"></div>
+      <h3 class="product-title">S.H.Figuarts Kamen Rider Kabuto</h3>
+      <p class="product-description">Bọ sừng bọc thép di chuyển tốc độ cực hạn Clock Up.</p>
+      <span class="product-price">2.100.000 VNĐ</span>
+      <button class="add-to-cart-btn">Thêm vào giỏ hàng</button>
+    </div>
+
+    <!-- 8. Den-O -->
+    <div class="product-card">
+      <div class="image-wrapper"><img src="deno.png" alt="Den-O" class="product-image"></div>
+      <h3 class="product-title">S.H.Figuarts Kamen Rider Den-O</h3>
+      <p class="product-description">Chuyến tàu thời gian cùng nhóm Imagin siêu hài hước.</p>
+      <span class="product-price">1.650.000 VNĐ</span>
+      <button class="add-to-cart-btn">Thêm vào giỏ hàng</button>
+    </div>
+
+    <!-- 9. Kiva -->
+    <div class="product-card">
+      <div class="image-wrapper"><img src="kiva.png" alt="Kiva" class="product-image"></div>
+      <h3 class="product-title">S.H.Figuarts Kamen Rider Kiva</h3>
+      <p class="product-description">Ma quỷ Ma Cà Rồng với giáp xiềng xích phong cách gothic.</p>
+      <span class="product-price">1.700.000 VNĐ</span>
+      <button class="add-to-cart-btn">Thêm vào giỏ hàng</button>
+    </div>
+
+    <!-- 10. Decade -->
+    <div class="product-card">
+      <div class="image-wrapper"><img src="decade.png" alt="Decade" class="product-image"></div>
+      <h3 class="product-title">S.H.Figuarts Kamen Rider Decade</h3>
+      <p class="product-description">Kẻ hủy diệt thế giới có khả năng biến thành các Rider khác.</p>
+      <span class="product-price">1.900.000 VNĐ</span>
+      <button class="add-to-cart-btn">Thêm vào giỏ hàng</button>
+    </div>
+
+    <!-- 11. W (Double) -->
+    <div class="product-card">
+      <div class="image-wrapper"><img src="w.png" alt="W" class="product-image"></div>
+      <h3 class="product-title">S.H.Figuarts Kamen Rider W (Double)</h3>
+      <p class="product-description">Rider 2 trong 1 đại diện mở đầu giai đoạn Neo-Heisei.</p>
+      <span class="product-price">1.750.000 VNĐ</span>
+      <button class="add-to-cart-btn">Thêm vào giỏ hàng</button>
+    </div>
+
+    <!-- 12. OOO -->
+    <div class="product-card">
+      <div class="image-wrapper"><img src="ozu.png" alt="OOO" class="product-image"></div>
+      <h3 class="product-title">S.H.Figuarts Kamen Rider OOO</h3>
+      <p class="product-description">Sử dụng 3 đồng xu Core Medal kết hợp sức mạnh động vật.</p>
+      <span class="product-price">1.680.000 VNĐ</span>
+      <button class="add-to-cart-btn">Thêm vào giỏ hàng</button>
+    </div>
+
+    <!-- 13. Fourze -->
+    <div class="product-card">
+      <div class="image-wrapper"><img src="fourze.png" alt="Fourze" class="product-image"></div>
+      <h3 class="product-title">S.H.Figuarts Kamen Rider Fourze</h3>
+      <p class="product-description">Rider tên lửa phi hành gia khám phá vũ trụ bao la.</p>
+      <span class="product-price">1.400.000 VNĐ</span>
+      <button class="add-to-cart-btn">Thêm vào giỏ hàng</button>
+    </div>
+
+    <!-- 14. Wizard -->
+    <div class="product-card">
+      <div class="image-wrapper"><img src="wizard.png" alt="Wizard" class="product-image"></div>
+      <h3 class="product-title">S.H.Figuarts Kamen Rider Wizard</h3>
+      <p class="product-description">Pháp sư nhẫn mang lại hy vọng biến ảo ảo thuật.</p>
+      <span class="product-price">1.600.000 VNĐ</span>
+      <button class="add-to-cart-btn">Thêm vào giỏ hàng</button>
+    </div>
+
+    <!-- 15. Gaim -->
+    <div class="product-card">
+      <div class="image-wrapper"><img src="gaim.png" alt="Gaim" class="product-image"></div>
+      <h3 class="product-title">S.H.Figuarts Kamen Rider Gaim</h3>
+      <p class="product-description">Mô hình Samurai hoa quả đại chiến Helheim.</p>
+      <span class="product-price">1.650.000 VNĐ</span>
+      <button class="add-to-cart-btn">Thêm vào giỏ hàng</button>
+    </div>
+
+    <!-- 16. Drive -->
+    <div class="product-card">
+      <div class="image-wrapper"><img src="drive.png" alt="Drive" class="product-image"></div>
+      <h3 class="product-title">S.H.Figuarts Kamen Rider Drive</h3>
+      <p class="product-description">Rider cảnh sát lái siêu xe ô tô tốc độ cao Tridoron.</p>
+      <span class="product-price">1.700.000 VNĐ</span>
+      <button class="add-to-cart-btn">Thêm vào giỏ hàng</button>
+    </div>
+
+    <!-- 17. Ghost -->
+    <div class="product-card">
+      <div class="image-wrapper"><img src="ghost.png" alt="Ghost" class="product-image"></div>
+      <h3 class="product-title">S.H.Figuarts Kamen Rider Ghost</h3>
+      <p class="product-description">Linh hồn vĩ nhân mượn sức mạnh biến hình áo choàng.</p>
+      <span class="product-price">1.500.000 VNĐ</span>
+      <button class="add-to-cart-btn">Thêm vào giỏ hàng</button>
+    </div>
+
+    <!-- 18. Ex-Aid -->
+    <div class="product-card">
+      <div class="image-wrapper"><img src="exaid.png" alt="Ex-Aid" class="product-image"></div>
+      <h3 class="product-title">S.H.Figuarts Kamen Rider Ex-Aid</h3>
+      <p class="product-description">Bác sĩ game thủ tiêu diệt virus máy tính trong trò chơi.</p>
+      <span class="product-price">1.750.000 VNĐ</span>
+      <button class="add-to-cart-btn">Thêm vào giỏ hàng</button>
+    </div>
+
+    <!-- 19. Build -->
+    <div class="product-card">
+      <div class="image-wrapper"><img src="build.png" alt="Build" class="product-image"></div>
+      <h3 class="product-title">S.H.Figuarts Kamen Rider Build</h3>
+      <p class="product-description">Nhà khoa học thiên tài kết hợp nguyên tố RabbitTank.</p>
+      <span class="product-price">1.450.000 VNĐ</span>
+      <button class="add-to-cart-btn">Thêm vào giỏ hàng</button>
+    </div>
+
+    <!-- 20. Zi-O -->
+    <div class="product-card">
+      <div class="image-wrapper"><img src="zio.png" alt="Zi-O" class="product-image"></div>
+      <h3 class="product-title">S.H.Figuarts Kamen Rider Zi-O</h3>
+      <p class="product-description">Ma vương thời gian kết thúc trọn vẹn kỷ nguyên Heisei.</p>
+      <span class="product-price">1.800.000 VNĐ</span>
+      <button class="add-to-cart-btn">Thêm vào giỏ hàng</button>
+    </div>
+
+    <!-- 21. Zero-One -->
+    <div class="product-card">
+      <div class="image-wrapper"><img src="zeroone.png" alt="Zero-One" class="product-image"></div>
+      <h3 class="product-title">S.H.Figuarts Kamen Rider Zero-One</h3>
+      <p class="product-description">Châu chấu công nghệ AI mở đầu cho kỷ nguyên Reiwa.</p>
+      <span class="product-price">1.850.000 VNĐ</span>
+      <button class="add-to-cart-btn">Thêm vào giỏ hàng</button>
+    </div>
+
+    <!-- 22. Saber -->
+    <div class="product-card">
+      <div class="image-wrapper"><img src="saber.png" alt="Saber" class="product-image"></div>
+      <h3 class="product-title">S.H.Figuarts Kamen Rider Saber</h3>
+      <p class="product-description">Kiếm sĩ rồng lửa bảo vệ thế giới sách kỳ diệu.</p>
+      <span class="product-price">1.900.000 VNĐ</span>
+      <button class="add-to-cart-btn">Thêm vào giỏ hàng</button>
+    </div>
+
+    <!-- 23. Revice -->
+    <div class="product-card">
+      <div class="image-wrapper"><img src="revice.png" alt="Revice" class="product-image"></div>
+      <h3 class="product-title">S.H.Figuarts Kamen Rider Revi & Vice</h3>
+      <p class="product-description">Bộ đôi con người và ác quỷ bên trong giao ước chiến đấu.</p>
+      <span class="product-price">2.100.000 VNĐ</span>
+      <button class="add-to-cart-btn">Thêm vào giỏ hàng</button>
+    </div>
+
+    <!-- 24. Geats -->
+    <div class="product-card">
+      <div class="image-wrapper"><img src="geats.png" alt="Geats IX" class="product-image"></div>
+      <h3 class="product-title">S.H.Figuarts Kamen Rider Geats IX</h3>
+      <p class="product-description">Cáo trắng thần thánh tham gia trò chơi sinh tồn Desire Grand Prix.</p>
+      <span class="product-price">2.450.000 VNĐ</span>
+      <button class="add-to-cart-btn">Thêm vào giỏ hàng</button>
+    </div>
+
+    <!-- 25. Gotchard -->
+    <div class="product-card">
+      <div class="image-wrapper"><img src="gotchard.png" alt="Gotchard" class="product-image"></div>
+      <h3 class="product-title">S.H.Figuarts Kamen Rider Gotchard</h3>
+      <p class="product-description">Nhà luyện kim trẻ tuổi kết hợp các quái vật bài Chemy.</p>
+      <span class="product-price">2.000.000 VNĐ</span>
+      <button class="add-to-cart-btn">Thêm vào giỏ hàng</button>
+    </div>
+
+    <!-- 26. Gavv -->
+    <div class="product-card">
+      <div class="image-wrapper"><img src="gavv.png" alt="Gavv" class="product-image"></div>
+      <h3 class="product-title">S.H.Figuarts Kamen Rider Gavv</h3>
+      <p class="product-description">Rider kẹo ngọt độc đáo năm 2024 chiến đấu với quái vật Granute.</p>
+      <span class="product-price">2.200.000 VNĐ</span>
+      <button class="add-to-cart-btn">Thêm vào giỏ hàng</button>
+    </div>
+
+    <!-- 27. Zeztz -->
+    <div class="product-card">
+      <div class="image-wrapper"><img src="zeztz.png" alt="Zeztz" class="product-image"></div>
+      <h3 class="product-title">S.H.Figuarts Kamen Rider Zeztz</h3>
+      <p class="product-description">Chiến binh điệp viên giấc mơ công nghệ cao năm 2025.</p>
+      <span class="product-price">2.350.000 VNĐ</span>
+      <button class="add-to-cart-btn">Thêm vào giỏ hàng</button>
+    </div>
+
+    <!-- 28. Myth -->
+    <div class="product-card">
+      <div class="image-wrapper"><img src="myth.png" alt="Myth" class="product-image"></div>
+      <h3 class="product-title">S.H.Figuarts Kamen Rider Myth</h3>
+      <p class="product-description">Siêu phẩm Rider mới năm 2026 mang sức mạnh huyền thoại 12 con giáp.</p>
+      <span class="product-price">2.600.000 VNĐ</span>
+      <button class="add-to-cart-btn">Thêm vào giỏ hàng</button>
+    </div>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+/* 1. Trạng thái bình thường của thẻ sản phẩm */
+.product-card {
+  width: 300px;
+  background-color: #ffffff;
+  border: 2px solid #007bff; /* Màu viền mặc định */
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  /* THÊM HIỆU ỨNG CHUYỂN ĐỔI MƯỢT MÀ (TRANSITION) */
+  /* Giúp cả hiệu ứng rê chuột vào VÀ rút chuột ra đều biến đổi từ từ trong 0.3 giây */
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+/* 2. Trạng thái KHI LIA CHUỘT VÀO (:hover) */
+.product-card:hover {
+  /* Phóng to khung lên 1.05 lần (5%) */
+  transform: scale(1.05);
+
+  /* Đổi màu đường viền sang màu đỏ (hoặc màu bạn thích) */
+  border-color: #ff5722;
+
+  /* Đổi màu nền nhẹ (tùy chọn) */
+  background-color: #fff9f8;
+
+  /* Tăng độ đổ bóng để tạo hiệu ứng nổi lên 3D */
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+
+  /* Đổi con trỏ chuột thành hình bàn tay */
+  cursor: pointer;
+}
