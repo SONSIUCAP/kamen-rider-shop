@@ -16,18 +16,13 @@
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       padding: 40px 20px;
-    }
 
-    /* CSS DÀNH CHO VIDEO NỀN ĐỘNG */
-    .bg-video {
-      position: fixed;
-      right: 0;
-      bottom: 0;
-      min-width: 100%;
-      min-height: 100%;
-      z-index: -1;
-      object-fit: cover;
-      filter: brightness(0.4);
+      /* CÀI ĐẶT ẢNH NỀN SANDROIN.PNG */
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('Sandroin.png');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
     }
 
     /* TRANG TRÍ TIÊU ĐỀ SHOP SHIBA IKKINU */
@@ -94,9 +89,9 @@
       transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
     }
 
-    /* Tag S.H.Figuarts góc thẻ */
+    /* Tag Shiba Moon góc thẻ */
     .product-card::after {
-      content: 'S.H.F';
+      content: 'Shiba Moon';
       position: absolute;
       top: 10px;
       right: -25px;
@@ -374,11 +369,6 @@
   </style>
 </head>
 <body>
-
-  <!-- VIDEO NỀN ĐỘNG -->
-  <video autoplay loop muted playsinline class="bg-video">
-    <source src="background-effect.mp4" type="video/mp4">
-  </video>
 
   <!-- TIÊU ĐỀ SHOP SHIBA IKKINU -->
   <div class="shop-header">
