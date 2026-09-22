@@ -1,36 +1,184 @@
-/* 1. Trạng thái bình thường của thẻ sản phẩm */
+/* --- PHONG CÁCH CYBERPUNK / MECHA NEON PRO --- */
+
+/* Thẻ sản phẩm bản đặc biệt */
 .product-card {
-  width: 300px;
-  background-color: #ffffff;
-  border: 2px solid #007bff; /* Màu viền mặc định */
-  border-radius: 10px;
-  padding: 20px;
+  width: 100%;
+  background: rgba(18, 20, 29, 0.85); /* Nền tối Cyberpunk hiện đại, làm nổi bật ảnh */
+  backdrop-filter: blur(12px); /* Hiệu ứng kính mờ xịn xò */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 22px 18px 18px;
   text-align: center;
+  position: relative;
+  overflow: hidden;
   
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
-  /* THÊM HIỆU ỨNG CHUYỂN ĐỔI MƯỢT MÀ (TRANSITION) */
-  /* Giúp cả hiệu ứng rê chuột vào VÀ rút chuột ra đều biến đổi từ từ trong 0.3 giây */
-  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  /* Cắt vát nhẹ 2 góc chéo kiểu Mecha/Driver Sci-Fi */
+  clip-path: polygon(
+    0 0, 
+    calc(100% - 15px) 0, 100% 15px, 
+    100% 100%, 
+    15px 100%, 0 calc(100% - 15px)
+  );
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* 2. Trạng thái KHI LIA CHUỘT VÀO (:hover) */
+/* Thẻ Tag Năng Lượng Sci-Fi góc trên */
+.product-card::after {
+  content: 'S.H.F';
+  position: absolute;
+  top: 10px;
+  right: -25px;
+  background: linear-gradient(135deg, #ff5722, #ff9800);
+  color: #fff;
+  font-size: 0.6rem;
+  font-weight: 900;
+  padding: 3px 25px;
+  transform: rotate(45deg);
+  box-shadow: 0 2px 8px rgba(255, 87, 34, 0.5);
+  letter-spacing: 1px;
+}
+
+/* Dải màu Neon động chạy ở viền dưới */
+.product-card::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #00d2ff, #007bff, #ff5722, #00d2ff);
+  background-size: 300% 100%;
+  transition: all 0.4s ease;
+}
+
+/* HIỆU ỨNG KHI RÊ CHUỘT VÀO (HOVER) */
 .product-card:hover {
-  /* Phóng to khung lên 1.05 lần (5%) */
-  transform: scale(1.05);
+  /* Bay lên + Nhẹ nhàng nghiêng góc 3D */
+  transform: translateY(-12px) scale(1.02);
+  background: rgba(25, 30, 45, 0.95);
+  
+  /* Viền viền sáng rực rỡ màu Cam Neon */
+  border-color: rgba(255, 87, 34, 0.8);
+  
+  /* Đổ bóng Neon rực rỡ bao quanh thẻ */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7),
+              0 0 20px rgba(255, 87, 34, 0.4),
+              inset 0 0 15px rgba(255, 87, 34, 0.1);
+}
 
-  /* Đổi màu đường viền sang màu đỏ (hoặc màu bạn thích) */
-  border-color: #ff5722;
+/* Viền neon chạy sống động khi hover */
+.product-card:hover::before {
+  height: 5px;
+  animation: neonGlow 2s linear infinite;
+}
 
-  /* Đổi màu nền nhẹ (tùy chọn) */
-  background-color: #fff9f8;
+@keyframes neonGlow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 300% 50%; }
+}
 
-  /* Tăng độ đổ bóng để tạo hiệu ứng nổi lên 3D */
-  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+/* Khung chứa ảnh sản phẩm */
+.image-wrapper {
+  width: 100%;
+  height: 200px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0.3) 100%);
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
 
-  /* Đổi con trỏ chuột thành hình bàn tay */
+/* Ánh sáng Laser quét ngang khi hover qua ảnh */
+.image-wrapper::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -75%;
+  width: 50%;
+  height: 200%;
+  background: linear-gradient(
+    90deg, 
+    rgba(255,255,255,0) 0%, 
+    rgba(255,255,255,0.3) 50%, 
+    rgba(255,255,255,0) 100%
+  );
+  transform: rotate(25deg);
+  transition: all 0.6s ease;
+}
+
+.product-card:hover .image-wrapper::before {
+  left: 125%; /* Quét từ trái sang phải */
+}
+
+/* Ảnh sản phẩm nhô lên 3D */
+.product-image {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  filter: drop-shadow(0 5px 8px rgba(0,0,0,0.5));
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.12) translateY(-5px);
+  filter: drop-shadow(0 12px 15px rgba(255, 87, 34, 0.5));
+}
+
+/* Chỉnh màu chữ cho hợp tông tối Cyberpunk */
+.product-title {
+  font-size: 1.1rem;
+  color: #ffffff;
+  margin-bottom: 8px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+}
+
+.product-description {
+  font-size: 0.85rem;
+  color: #a0aec0;
+  margin-bottom: 14px;
+  line-height: 1.4;
+  flex-grow: 1;
+}
+
+.product-price {
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: #00e676; /* Giá tiền xanh neon nổi bật */
+  text-shadow: 0 0 10px rgba(0, 230, 118, 0.4);
+  margin-bottom: 14px;
+  display: block;
+}
+
+/* Nút bấm mua hàng phong cách Sci-Fi */
+.add-to-cart-btn {
+  background: linear-gradient(135deg, #007bff, #00d2ff);
+  color: #ffffff;
+  border: none;
+  padding: 12px 15px;
+  border-radius: 8px;
+  font-weight: 800;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
+  transition: all 0.3s ease;
+}
+
+.product-card:hover .add-to-cart-btn {
+  background: linear-gradient(135deg, #ff5722, #ff9800);
+  box-shadow: 0 6px 18px rgba(255, 87, 34, 0.6);
+  transform: translateY(-2px);
 }
